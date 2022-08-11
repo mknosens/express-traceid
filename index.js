@@ -1,7 +1,7 @@
-const { v4: uuidv4 } = require('uuid');
+const { v1: uuidv1 } = require('uuid');
 
 module.exports = (req, res, next) => {
-    req.traceId = uuidv4();
+    req.traceId = uuidv1();
     res.set('X-Trace-Id', req.traceId);
     next();
 }
